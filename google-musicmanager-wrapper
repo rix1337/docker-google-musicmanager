@@ -4,4 +4,4 @@ echo "Starting VNC Server"
 vncserver
 echo "Starting Google MusicManager"
 /usr/bin/google-musicmanager "$@"
-while true do sleep 99; done
+while true ; do continue; sleep 90 ; done

@@ -2,7 +2,7 @@ FROM phusion/baseimage
 MAINTAINER rix1337
 
 
-ENV DEBIAN_FRONTEND=noninteractive HOME="/root" TERM=xterm
+ENV DEBIAN_FRONTEND=noninteractive HOME="/root" TERM=xterm USER=root
 
 # GMM setup created by James T. Lee (2017)
 RUN apt-get update \
@@ -18,11 +18,7 @@ RUN apt-get update \
 
 # Setup VNC
 RUN apt install --no-install-recommends xserver-xorg -y \
- && apt-get install -y openbox lightdm tightvncserver sudo xterm \
- && adduser vnc \
- && gpasswd -a vnc sudo \
- && su - vnc \
- && touch ~/.Xresources
+ && apt-get install -y openbox lightdm tightvncserver sudo xterm
  
 COPY google-musicmanager-wrapper /
 
