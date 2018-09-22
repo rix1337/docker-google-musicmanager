@@ -5,9 +5,10 @@ PORT=${PORT:-5900}
 DISPLAY=:20
 
 echo "Setting up Display"
-Xvfb :20 -screen 0 600x800x16 &
+Xvfb :20 -screen 0 1024x768x16 &
 echo "Starting Google MusicManager"
 DISPLAY=:20 google-musicmanager -s /music &
 sleep 5
 echo "Starting VNC Server"
-x11vnc -passwd $PASSWORD -display :20 -N -rfbport $PORT -forever
+x11vnc -passwd $PASSWORD -display :20 -N -rfbport $PORT -forever &
+DISPLAY=:20 google-musicmanager -s /music &
