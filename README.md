@@ -18,12 +18,12 @@ docker create \
   --net=host \
   -e PORT=5900 \
   -e PASSWORD=vncpass \
-  -v $HOME/.config/google-musicmanager:/config \
+  -v </path/to/config>:/config \
   -v </path/to/music>:/music \
   rix1337/docker-google-musicmanager
 ```
 
-Be aware that Google Play Music does some form of client tracking by MAC address, which will cause trouble when not using `--net=host`.
+Be aware that Google Play Music does some form of client tracking by MAC address, which will cause trouble when not using `--net=host`. This is why no port mapping is used. If you need to change the port, use the environment variable.
 
 ### Volumes
 
