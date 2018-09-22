@@ -6,33 +6,24 @@ known security vulnerabilities, like QtWebKit.  This Docker image is inteded to
 keep Music Manager alive in a stable and semi-isolated environment long after
 distros have removed its dependencies.
 
-This image is loosely modeled after
-[`ruippeixotog/google-musicmanager`](https://hub.docker.com/r/ruippeixotog/google-musicmanager/),
-but modified to run as a client on your host's X server like any other X
-application, rather than running in an embedded Xvfb server.
+This image is based on [`iamjamestl/docker-google-musicmanager/`](https://github.com/iamjamestl/docker-google-musicmanager/) that is loosely modeled after
+[`ruippeixotog/google-musicmanager`](https://hub.docker.com/r/ruippeixotog/google-musicmanager/).
+
+This version uses an included Xvfb server.
 
 ## Installation
 
 ```
 docker create \
   --name=google-musicmanager \
-  --ipc=host \
   --net=host \
-  -e DISPLAY \
-  -v $XAUTHORITY:/root/.Xauthority \
-  -v /tmp/.X11-unix:/tmp/.X11-unix \
+  -p 5900:5900 \
   -v $HOME/.config/google-musicmanager:/config \
   -v </path/to/music>:/music \
-  iamjamestl/google-musicmanager
+  rix1337/docker-google-musicmanager
 ```
 
-You can optionally replace `--ipc=host` with `-e QT_X11_NO_MITSHM=1` for
-increased isolation but lower graphical performance.  You can also remove `-v
-$XAUTHORITY:/root/.Xauthority` if you open your X server to local connections
-from `root` with `xhost +local:root`.  If you choose to open your X server in
-this way, you can also remove the `--net=host` option for increased network
-isolation, though be aware that Google Play Music does some form of client
-tracking by MAC address, so that could lead to unpredictable behavior.
+Be aware that Google Play Music does some form of client tracking by MAC address, which will cause trouble when not using `--net=host`.
 
 ### Volumes
 
@@ -51,8 +42,7 @@ tracking by MAC address, so that could lead to unpredictable behavior.
 Start the container with `docker start google-musicmanager`.  The first time
 you start the container with an empty config directory, the application will
 launch a Google login screen.  Every time thereafter, the application will
-launch directly to a system tray icon.  Click it to restore the main window.
-If you do not have a system tray, you can get the main window to show by
+launch hidden. You can get the main window to show by
 running:
 
 ```
