@@ -4,8 +4,10 @@ PASSWORD=${PASSWORD:-GoogleMusic}
 PORT=${PORT:-5900}
 DISPLAY=:20
 
+echo "Setting up Display"
 Xvfb :20 -screen 0 1280x720x16
 echo "Starting Google MusicManager"
 /usr/bin/google-musicmanager -s "/music"
+sleep 10
 echo "Starting VNC Server"
 x11vnc -passwd $PASSWORD -display :20 -N -rfbport $PORT -forever
