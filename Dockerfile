@@ -18,4 +18,4 @@ RUN apt-get install -y x11vnc xvfb
  
 COPY google-musicmanager-wrapper /
 
-CMD ["/google-musicmanager-wrapper", "-s", "/music"]
+CMD ["/google-musicmanager-wrapper"]
