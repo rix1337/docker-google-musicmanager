@@ -36,26 +36,3 @@ Be aware that Google Play Music does some form of client tracking by MAC address
   Google Play Music.  Map your music library to this volume.  You can map
   multiple music volumes into the container, but you must manually configure
   Music Manager to read from them.
-
-## Starting
-
-Start the container with `docker start google-musicmanager`.  The first time
-you start the container with an empty config directory, the application will
-launch a Google login screen.  Every time thereafter, the application will
-launch hidden. You can get the main window to show by
-running:
-
-```
-docker exec google-musicmanager google-musicmanager
-```
-
-## Stopping
-
-When you are done uploading your music, you can keep the container running to
-monitor your music library for changes, or stop the container with `docker stop
-google-musicmanager`.
-
-## Removing
-
-Run `docker rm google-musicmanager`.  You can always restore the container by
-specifying the same `/config` and `/music` volumes that you used before.
