@@ -9,15 +9,13 @@ distros have removed its dependencies.
 This image is based on [`iamjamestl/docker-google-musicmanager/`](https://github.com/iamjamestl/docker-google-musicmanager/) that is loosely modeled after
 [`ruippeixotog/google-musicmanager`](https://hub.docker.com/r/ruippeixotog/google-musicmanager/).
 
-This version uses an included Xvfb server.
-
+This version relies on an included VNC server.
 ## Installation
 
 ```
 docker create \
   --name=google-musicmanager \
   --net=host \
-  -p 5900:5900 \
   -v $HOME/.config/google-musicmanager:/config \
   -v </path/to/music>:/music \
   rix1337/docker-google-musicmanager

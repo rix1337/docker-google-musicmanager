@@ -17,7 +17,7 @@ RUN apt-get update \
  && ln -sf /music /root/Music
 
 # Setup VNC
- && apt install --no-install-recommends xserver-xorg -y \
+RUN apt install --no-install-recommends xserver-xorg -y \
  && apt-get install -y openbox lightdm tightvncserver sudo xterm \
  && adduser vnc \
  && gpasswd -a vnc sudo \

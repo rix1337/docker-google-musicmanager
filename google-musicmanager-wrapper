@@ -1,12 +1,4 @@
 #!/bin/bash
-#
-# Google Music Manager Wrapper
-# Copyright (C) 2017 James T. Lee
-#
-# The google-musicmanager process daemonizes itself which causes the Docker
-# container to stop.  This wrapper waits for the daemon to stop, and takes care
-# to pass a couple of exit signals to it.
-#
 
 echo "Starting VNC Server"
 vncserver
