@@ -1,7 +1,9 @@
 #!/bin/bash
 
 echo "Starting VNC Server"
-vncserver
+export DISPLAY=:20
+Xvfb :20 -screen 0 800x600x16 &
+x11vnc -passwd TestVNC -display :20 -N -forever &
 echo "Starting Google MusicManager"
 /usr/bin/google-musicmanager "$@"
 while true ; do continue; sleep 90 ; done
