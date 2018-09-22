@@ -16,6 +16,8 @@ This version relies on an included VNC server.
 docker create \
   --name=google-musicmanager \
   --net=host \
+  -e PORT=5900 \
+  -e PASSWORD=vncpass \
   -v $HOME/.config/google-musicmanager:/config \
   -v </path/to/music>:/music \
   rix1337/docker-google-musicmanager

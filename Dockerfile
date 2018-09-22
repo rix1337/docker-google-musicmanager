@@ -1,9 +1,6 @@
 FROM phusion/baseimage
 MAINTAINER rix1337
 
-EXPOSE 5920
-ENV DISPLAY :20
-
 # GMM setup created by James T. Lee (2017)
 RUN apt-get update \
  && apt-get install -y wget \

@@ -1,9 +1,13 @@
 #!/bin/bash
 
+${PASSWORD:-GoogleMusic}
+${PORT:-5900}
+
 echo "Starting VNC Server"
 export DISPLAY=:20
-Xvfb :20 -screen 0 800x600x16 &
-x11vnc -passwd TestVNC -display :20 -N -forever &
+Xvfb :20 -screen 0 600x800x16
+sleep 5
+x11vnc -passwd $PASSWORD -display :20 -N -rfbport $PORT -forever &
 echo "Starting Google MusicManager"
 /usr/bin/google-musicmanager "$@"
 while true ; do continue; sleep 90 ; done
