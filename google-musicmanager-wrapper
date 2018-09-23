@@ -4,11 +4,11 @@ PASSWORD=${PASSWORD:-GoogleMusic}
 PORT=${PORT:-5900}
 DISPLAY=:20
 
-echo "Setting up Display"
+echo "$(date "+%d.%m.%Y %T") : Setting up Display"
 Xvfb :20 -screen 0 1024x768x16 &
-echo "Starting Google MusicManager"
+echo "$(date "+%d.%m.%Y %T") : Starting Google MusicManager"
 DISPLAY=:20 google-musicmanager -s /music &
 sleep 5
 DISPLAY=:20 google-musicmanager -s /music &
-echo "Starting VNC Server"
-x11vnc -passwd $PASSWORD -display :20 -N -rfbport $PORT -forever
+echo "$(date "+%d.%m.%Y %T") : Starting VNC Server"
+x11vnc -passwd $PASSWORD -display :20 -N -rfbport $PORT -forever &>/dev/null
