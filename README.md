@@ -9,7 +9,8 @@ distros have removed its dependencies.
 This image is based on [`iamjamestl/docker-google-musicmanager/`](https://github.com/iamjamestl/docker-google-musicmanager/) that is loosely modeled after
 [`ruippeixotog/google-musicmanager`](https://hub.docker.com/r/ruippeixotog/google-musicmanager/).
 
-This version relies on an included VNC server.
+This version relies on an included VNC server. Connect with any VNC client (default port 5900, password GoogleMusic).
+
 ## Installation
 
 ```
