@@ -9,5 +9,6 @@ Xvfb :20 -screen 0 1024x768x16 &
 echo "Starting Google MusicManager"
 DISPLAY=:20 google-musicmanager -s /music &
 sleep 5
+DISPLAY=:20 google-musicmanager -s /music &
 echo "Starting VNC Server"
 x11vnc -passwd $PASSWORD -display :20 -N -rfbport $PORT -forever
