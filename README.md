@@ -17,7 +17,7 @@ docker create \
   --name=google-musicmanager \
   --net=host \
   -e PORT=5900 \
-  -e PASSWORD=vncpass \
+  -e PASSWORD=GoogleMusic \
   -v </path/to/config>:/config \
   -v </path/to/music>:/music \
   rix1337/docker-google-musicmanager
