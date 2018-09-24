@@ -1,5 +1,7 @@
 #!/bin/bash
 
+rm /tmp/.X20-lock &>/dev/null
+
 PASSWORD=${PASSWORD:-GoogleMusic}
 PORT=${PORT:-5900}
 DISPLAY=:20
