@@ -1,6 +1,6 @@
 # Google Play Music Manager for Docker
 
-[![ko-fi](https://img.shields.io/badge/Support-me-red.svg)](https://ko-fi.com/J3J4Y2R6)
+[![Github Sponsorship](https://img.shields.io/badge/support-me-red.svg)](https://github.com/users/rix1337/sponsorship)
 
 The [Google Play Music Manager](https://support.google.com/googleplaymusic/answer/1075570?hl=en)
 is becoming increasingly hard to run, depending on deprecated libraries with
