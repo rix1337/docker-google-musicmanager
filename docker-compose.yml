@@ -1,0 +1,12 @@
+version: '3.3'
+services:
+    docker-google-musicmanager:
+        container_name: google-musicmanager
+        network_mode: host
+        environment:
+            - PORT=5900
+            - PASSWORD=GoogleMusic
+        volumes:
+            - '</path/to/config>:/config'
+            - '</path/to/music>:/music'
+        image: rix1337/docker-google-musicmanager
